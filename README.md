@@ -1,6 +1,45 @@
- # Econ Dashboard
+# Econ Dashboard
 
- ## Scope and Planning
+## Scope and Planning
+
+### Recommendations
+
+- **Finalize Data Sources**: The sooner you know where the data is coming from, the sooner you can start planning around rate limits, data types, etc.
+  
+- **Prototyping**: Before jumping into full-scale development, create small prototypes to test data retrieval, database updates, and visualization.
+
+- **Iterative Development**: Start with a minimum viable product (MVP) and add features iteratively.
+
+- **Hosting & Backend**: Since you're using Python and Flask, Heroku might be a better fit than GitHub Pages for hosting. It also supports SQLite.
+
+- **Resource Allocation**: Make sure to allocate sufficient time for each part of the project but be prepared to adjust based on what you find during the initial stages.
+
+
+### Project Timeline and Tasks
+
+#### Week 1: Initial Setup and Data Source Research
+- [ ] **Day 1:** Setup the initial GitHub repository and local development environment.
+- [ ] **Day 2-3:** Research APIs for Federal Reserve, OECD, etc. Understand rate limits and data structures.
+- [ ] **Day 4:** Finalize list of indicators and data sources to be displayed on the dashboard.
+
+#### Week 2: Backend Development and Data Retrieval
+- [ ] **Day 5-6:** Write Python scripts to pull data from finalized APIs.
+- [ ] **Day 7:** Create SQLite database schema.
+- [ ] **Day 8:** Implement caching logic to store API data in SQLite database.
+
+#### Week 3: Front-end Development
+- [ ] **Day 9:** Design the front-end layout with HTML and CSS.
+- [ ] **Day 10-11:** Learn basic D3.js for data visualization.
+- [ ] **Day 12:** Implement D3.js charts and graphs based on the data in SQLite database.
+
+#### Week 4: Full-Stack Integration and Testing
+- [ ] **Day 13:** Integrate the Flask backend with the front-end.
+- [ ] **Day 14:** Test the complete application locally for bugs and performance issues.
+- [ ] **Day 15:** Make any necessary adjustments based on testing.
+
+#### Final Days: Deployment and Documentation
+- [ ] **Day 16:** Decide on hosting (Heroku or GitHub Pages) and deploy the project.
+- [ ] **Day 17:** Write final documentation in README, including how to run the project locally and how to use the deployed application.
  
  ### Questions to Clarify
 

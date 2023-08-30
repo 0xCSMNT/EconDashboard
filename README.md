@@ -1,23 +1,35 @@
-# Econ Dashboard
+# EconDashboard
 
-Welcome to EconDashboard, a project currently in active development (WIP). This dashboard aims to visualize key economic indicators in an easy-to-digest format. We're building a single-page application that pulls data from various trusted sources like the Federal Reserve and the OECD to create a holistic economic snapshot. The stack includes HTML, CSS, Python, Flask, SQLite3 for caching, and JavaScript for interactive graphs using D3. The ultimate goal is to provide a useful, real-time resource for individuals interested in economics, whether for academic, professional, or personal reasons. While this project is initially for personal use, we have plans to scale and refine it into a comprehensive tool that can serve a broader audience. Contributions and suggestions are welcome as we work to improve and expand the dashboard.
+Welcome to EconDashboard. This is a single-page application designed to pull and visualize key economic indicators. The project is under active development and aims to become a useful tool for personal research and possibly more. I'm using ChatGPT as a collaborative tool to help scope, plan, and troubleshoot various aspects of the project.
 
-## Scope and Planning
+## Project Information
 
-### Recommendations
+### Target Audience
+Primarily for personal use, though the project may evolve into a portfolio piece in the future.
 
-- **Finalize Data Sources**: The sooner you know where the data is coming from, the sooner you can start planning around rate limits, data types, etc.
-  
-- **Prototyping**: Before jumping into full-scale development, create small prototypes to test data retrieval, database updates, and visualization.
+### Data Sources
+The data sources have not been finalized yet. Potential candidates include government sources like the Federal Reserve and OECD.
 
-- **Iterative Development**: Start with a minimum viable product (MVP) and add features iteratively.
+### Dashboard Features
+The focus is on a simple, single-page dashboard showcasing various economic indicators.
 
-- **Hosting & Backend**: Since you're using Python and Flask, Heroku might be a better fit than GitHub Pages for hosting. It also supports SQLite.
+### Caching
+SQLite3 is the database being considered for caching, with JSON as an alternative.
 
-- **Resource Allocation**: Make sure to allocate sufficient time for each part of the project but be prepared to adjust based on what you find during the initial stages.
+### Graph Types
+Planning to include bar charts and line graphs, possibly others based on the nature of the data.
+
+### Hosting
+Undecided between GitHub Pages and Heroku; dependent on back-end resource needs.
+
+### Technology Stack
+HTML, CSS, Python, Flask, SQLite3, JavaScript (D3), Pandas, datareader, and some Python API libraries.
+
+### Time Frame
+The project is estimated to be completed in 10-15 days.
 
 
-### Project Timeline and Tasks
+## Project Timeline and Tasks
 
 #### Week 1: Initial Setup and Data Source Research
 - [ ] **Day 1:** Setup the initial GitHub repository and local development environment.
@@ -42,62 +54,44 @@ Welcome to EconDashboard, a project currently in active development (WIP). This 
 #### Final Days: Deployment and Documentation
 - [ ] **Day 16:** Decide on hosting (Heroku or GitHub Pages) and deploy the project.
 - [ ] **Day 17:** Write final documentation in README, including how to run the project locally and how to use the deployed application.
- 
- ### Questions to Clarify
 
-**Target Audience:** Who will be the end-users of your website? Is this dashboard for a specific industry, general public, or for personal use?
 
-_It's more for personal use. Over time it might grow into some kind of portfolio piece, but that is less important_
+## Recommendations by ChatGPT
 
-**Data Sources:** What APIs will you be pulling data from? Have you checked their rate limits and data structures?
+### Finalize Data Sources
+Determine the APIs or data sources as early as possible to plan for rate limits and data structures.
 
-_I have not fully decided yet, some gov sources like Fed Reserve, OECD would be great if possible. I think this will be step one - clarifying what metrics and data sources I am going to use._
+### Prototyping
+Prioritize creating small prototypes for testing various aspects of the project like data retrieval and visualization.
 
-**Dashboard Features:** What specific features do you want your dashboard to have? (e.g., real-time updates, interactive graphs, user login, etc.)
+### Iterative Development
+Start with an MVP (Minimum Viable Product) and evolve from there.
 
-_Nothing too sophisticated, just a single page with a bunch of indicators I find interesting_
+### Hosting & Backend
+Given the tech stack of Python and Flask, Heroku could be a more fitting choice for hosting as it also supports SQLite.
 
-**Caching:** What is the specific type of database you plan to use for caching? How frequently will you update it?
-
-_I will try to use SQLite3 as I am familiar with it. I am also open to saving data in a JSON format if it is more suitable to the data, but that may add somewhat to learning time_
-
-**Graph Types:** You mentioned using D3 for graphs; what types of graphs are you planning to include?
-
-_Bar charts, line graphs mostly. I'm interested in correlations between assets and time series, so open to other suggestions_
-
-**Hosting:** Do you have any preferences between GitHub Pages and Heroku based on your project's needs?
-
-_It comes down to what resources I will need for my backed to operate correctly. I would like to rely on the simplest tool for the job._
-
-**Technology Stack:** You've mentioned HTML, CSS, Python, Flask, SQL, JS, and D3. Any other technologies or libraries you're considering?
-
-_Pandas, datareader, some API libraries for python. Anything else I might need for exploratory data analysis as I figure out what to include in the dashboards and any dataprocessing I will need to do_
-
-**Time Frame:** What is the estimated time you're allocating for this project?
-
-_10-15 days_
+### Resource Allocation
+Ensure ample time is allocated for each segment of the project, and be prepared to make adjustments based on initial findings.
 
 ### General Tips
 
-Start Small: Aim for a Minimum Viable Product (MVP) first. This will be the simplest version of your dashboard that still provides value.
+#### Start Small
+Aim for a Minimum Viable Product (MVP) first to provide value quickly.
 
-Divide and Conquer: Break down the project into smaller tasks (e.g., API integration, database setup, front-end development, etc.) and prioritize them.
+#### Divide and Conquer
+Break the project into smaller tasks and prioritize them.
 
-Identify Dependencies: Some tasks will depend on the completion of others. Make sure to identify these to avoid roadblocks later.
+#### Identify Dependencies
+Understand dependencies between tasks to avoid future roadblocks.
 
-Iterate: Once the MVP is complete, you can iteratively add more features, guided by user feedback if possible.
+#### Iterate
+Build upon the MVP based on new learnings and potential user feedback.
 
-Version Control: Since you're familiar with Git, make sure to use it effectively to manage different versions of your project.
+#### Version Control
+Use Git effectively to manage the project versions.
 
-Test: Don't forget to include time for testing, especially for integrations between different components like the API, caching layer, and front-end.
+#### Test
+Allocate time for testing, especially integration tests between different components.
 
-Documentation: Keep notes on your code, especially if you're planning to grow or maintain this project long-term.
-
-### Specific Tips
-
-APIs & Caching: Given that you aim to pull data from multiple APIs and use caching to reduce calls, plan how you'll sync data between your cache and the actual APIs. Decide on a caching strategy that aligns with the API rate limits.
-
-JS & D3 Learning: As you mentioned learning JS and D3 for this project, allocate specific time for this. It might be beneficial to go through some quick tutorials to get a hang of the syntax and functionalities before diving into the project.
-
-Full-Stack Goals: Since your objective is to get a grounding in full-stack development, pay attention to how each component (front-end, back-end, database) interacts with each other. This will be a crucial learning point for you.
-
+#### Documentation
+Keep comprehensive notes for long-term maintenance and scalability.

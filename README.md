@@ -32,7 +32,7 @@ The project is estimated to be completed in 10-15 days.
 ## Project Timeline and Tasks
 
 #### Week 1: Initial Setup and Data Source Research
-- [ ] **Day 1:** Setup the initial GitHub repository and local development environment.
+- [x] **Day 1:** Setup the initial GitHub repository and local development environment.
 - [ ] **Day 2-3:** Research APIs for Federal Reserve, OECD, etc. Understand rate limits and data structures.
 - [ ] **Day 4:** Finalize list of indicators and data sources to be displayed on the dashboard.
 

@@ -1,6 +1,6 @@
  # Econ Dashboard
 
- # Scope and Planning
+ ## Scope and Planning
  
  ### Questions to Clarify
 

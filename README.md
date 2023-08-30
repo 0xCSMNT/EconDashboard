@@ -1,6 +1,6 @@
  # Econ Dashboard
 
- # Questions to Clarify
+ ## Questions to Clarify
 
 Target Audience: Who will be the end-users of your website? Is this dashboard for a specific industry, general public, or for personal use?
 
@@ -18,7 +18,7 @@ Technology Stack: You've mentioned HTML, CSS, Python, Flask, SQL, JS, and D3. An
 
 Time Frame: What is the estimated time you're allocating for this project?
 
-# General Tips
+## General Tips
 
 Start Small: Aim for a Minimum Viable Product (MVP) first. This will be the simplest version of your dashboard that still provides value.
 
@@ -34,7 +34,7 @@ Test: Don't forget to include time for testing, especially for integrations betw
 
 Documentation: Keep notes on your code, especially if you're planning to grow or maintain this project long-term.
 
-# Specific Tips
+## Specific Tips
 
 APIs & Caching: Given that you aim to pull data from multiple APIs and use caching to reduce calls, plan how you'll sync data between your cache and the actual APIs. Decide on a caching strategy that aligns with the API rate limits.
 

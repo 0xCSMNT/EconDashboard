@@ -1,5 +1,7 @@
 # Econ Dashboard
 
+Welcome to EconDashboard, a project currently in active development (WIP). This dashboard aims to visualize key economic indicators in an easy-to-digest format. We're building a single-page application that pulls data from various trusted sources like the Federal Reserve and the OECD to create a holistic economic snapshot. The stack includes HTML, CSS, Python, Flask, SQLite3 for caching, and JavaScript for interactive graphs using D3. The ultimate goal is to provide a useful, real-time resource for individuals interested in economics, whether for academic, professional, or personal reasons. While this project is initially for personal use, we have plans to scale and refine it into a comprehensive tool that can serve a broader audience. Contributions and suggestions are welcome as we work to improve and expand the dashboard.
+
 ## Scope and Planning
 
 ### Recommendations

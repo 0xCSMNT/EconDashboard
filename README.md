@@ -36,7 +36,7 @@ _Pandas, datareader, some API libraries for python. Anything else I might need f
 
 _10-15 days_
 
-## General Tips
+### General Tips
 
 Start Small: Aim for a Minimum Viable Product (MVP) first. This will be the simplest version of your dashboard that still provides value.
 
@@ -52,7 +52,7 @@ Test: Don't forget to include time for testing, especially for integrations betw
 
 Documentation: Keep notes on your code, especially if you're planning to grow or maintain this project long-term.
 
-## Specific Tips
+### Specific Tips
 
 APIs & Caching: Given that you aim to pull data from multiple APIs and use caching to reduce calls, plan how you'll sync data between your cache and the actual APIs. Decide on a caching strategy that aligns with the API rate limits.
 

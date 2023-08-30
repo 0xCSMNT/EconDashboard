@@ -5,27 +5,35 @@
  ### Questions to Clarify
 
 **Target Audience:** Who will be the end-users of your website? Is this dashboard for a specific industry, general public, or for personal use?
+
 _It's more for personal use. Over time it might grow into some kind of portfolio piece, but that is less important_
 
 **Data Sources:** What APIs will you be pulling data from? Have you checked their rate limits and data structures?
+
 _I have not fully decided yet, some gov sources like Fed Reserve, OECD would be great if possible. I think this will be step one - clarifying what metrics and data sources I am going to use._
 
 **Dashboard Features:** What specific features do you want your dashboard to have? (e.g., real-time updates, interactive graphs, user login, etc.)
+
 _Nothing too sophisticated, just a single page with a bunch of indicators I find interesting_
 
 **Caching:** What is the specific type of database you plan to use for caching? How frequently will you update it?
+
 _I will try to use SQLite3 as I am familiar with it. I am also open to saving data in a JSON format if it is more suitable to the data, but that may add somewhat to learning time_
 
 **Graph Types:** You mentioned using D3 for graphs; what types of graphs are you planning to include?
+
 _Bar charts, line graphs mostly. I'm interested in correlations between assets and time series, so open to other suggestions_
 
 **Hosting:** Do you have any preferences between GitHub Pages and Heroku based on your project's needs?
+
 _It comes down to what resources I will need for my backed to operate correctly. I would like to rely on the simplest tool for the job._
 
 **Technology Stack:** You've mentioned HTML, CSS, Python, Flask, SQL, JS, and D3. Any other technologies or libraries you're considering?
+
 _Pandas, datareader, some API libraries for python. Anything else I might need for exploratory data analysis as I figure out what to include in the dashboards and any dataprocessing I will need to do_
 
 **Time Frame:** What is the estimated time you're allocating for this project?
+
 _10-15 days_
 
 ## General Tips

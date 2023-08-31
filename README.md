@@ -34,7 +34,7 @@ The project is estimated to be completed in 10-15 days.
 #### Week 1: Initial Setup and Data Source Research
 - [x] **Day 1:** Setup the initial GitHub repository and local development environment.
 - [x] **Day 2-3:** Research APIs for Federal Reserve, OECD, etc. Understand rate limits and data structures.
-- [ ] **Day 4:** Finalize list of indicators and data sources to be displayed on the dashboard.
+- [x] **Day 4:** Finalize list of indicators and data sources to be displayed on the dashboard.
 
 #### Week 2: Backend Development and Data Retrieval
 - [ ] **Day 5-6:** Write Python scripts to pull data from finalized APIs.

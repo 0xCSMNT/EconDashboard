@@ -8,10 +8,10 @@ Welcome to EconDashboard. This is a single-page application designed to pull and
 Primarily for personal use, though the project may evolve into a portfolio piece in the future.
 
 ### Data Sources
-The data sources have not been finalized yet. Potential candidates include government sources like the Federal Reserve and OECD.
+V1 will soley utilize the FRED database for data on the US economy. Future versions can look into more diverse sources and assets such as cryptocurrency, forex and commodities.
 
 ### Dashboard Features
-The focus is on a simple, single-page dashboard showcasing various economic indicators.
+The focus is on a simple dashboard showcasing various economic indicators.
 
 ### Caching
 SQLite3 is the database being considered for caching, with JSON as an alternative.
@@ -33,7 +33,7 @@ The project is estimated to be completed in 10-15 days.
 
 #### Week 1: Initial Setup and Data Source Research
 - [x] **Day 1:** Setup the initial GitHub repository and local development environment.
-- [ ] **Day 2-3:** Research APIs for Federal Reserve, OECD, etc. Understand rate limits and data structures.
+- [x] **Day 2-3:** Research APIs for Federal Reserve, OECD, etc. Understand rate limits and data structures.
 - [ ] **Day 4:** Finalize list of indicators and data sources to be displayed on the dashboard.
 
 #### Week 2: Backend Development and Data Retrieval

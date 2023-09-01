@@ -37,7 +37,7 @@ The project is estimated to be completed in 10-15 days.
 - [x] **Day 4:** Finalize list of indicators and data sources to be displayed on the dashboard.
 
 #### Week 2: Backend Development and Data Retrieval
-- [ ] **Day 5-6:** Write Python scripts to pull data from finalized APIs.
+- [x] **Day 5-6:** Write Python scripts to pull data from finalized APIs.
 - [ ] **Day 7:** Create SQLite database schema.
 - [ ] **Day 8:** Implement caching logic to store API data in SQLite database.
 

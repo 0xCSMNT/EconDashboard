@@ -34,7 +34,9 @@ EconDashboard is a simple, single-page application designed to pull and visualiz
 Primarily for personal use, though the project may evolve into a portfolio piece in the future.
 
 ### Data Sources
-V1 will focus entirely on US economic data available on the FRED database: https://fred.stlouisfed.org/docs/api/fred/. Future versions will include more diverse data sources.
+V1 will focus entirely on US economic data available on the FRED database: https://fred.stlouisfed.org/docs/api/fred/. 
+
+Future versions will include more diverse data sources.
 
 ### Dashboard Features
 The focus is on a simple dashboard showcasing various economic indicators such as GDP, CPI etc.

@@ -14,7 +14,7 @@ EconDashboard is a simple, single-page application designed to pull and visualiz
 #### Week 2: Backend Development and Data Retrieval
 - [x] **Day 5-6:** Write Python scripts to pull data from finalized APIs.
 - [x] **Day 7:** Create JSON object for cache ~~SQLite database schema~~.
-- [ ] **Day 8:** Implement caching logic to update JSON every 12 hours using Github Actions ~~store API data in SQLite database~~.
+- [ ] **Day 8:** Secure your API key. ~~store API data in SQLite database~~.
 
 #### Week 3: Front-end Development
 - [ ] **Day 9:** Design the front-end layout with HTML and CSS.
@@ -27,7 +27,7 @@ EconDashboard is a simple, single-page application designed to pull and visualiz
 - [ ] **Day 15:** Make any necessary adjustments based on testing.
 
 #### Final Days: Deployment and Documentation
-- [ ] **Day 16:** Secure your API key. Decide on hosting (Heroku or GitHub Pages) and deploy the project. 
+- [ ] **Day 16:** Implement caching logic to update JSON every 12 hours using Github Actions. Deploy the project. ~~Decide on hosting (Heroku or GitHub Pages)~~. 
 - [ ] **Day 17:** Write final documentation in README, including how to run the project locally and how to use the deployed application.
 
 

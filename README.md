@@ -1,34 +1,6 @@
 # EconDashboard
 
-Welcome to EconDashboard. This is a single-page application designed to pull and visualize key economic indicators. The project is under active development and aims to become a useful tool for personal research and possibly more. I'm using ChatGPT as a collaborative tool to help scope, plan, and troubleshoot various aspects of the project.
-
-## Project Information
-
-### Target Audience
-Primarily for personal use, though the project may evolve into a portfolio piece in the future.
-
-### Data Sources
-V1 will soley utilize the FRED database for data on the US economy. Future versions can look into more diverse sources and assets such as cryptocurrency, forex and commodities.
-
-### Dashboard Features
-The focus is on a simple dashboard showcasing various economic indicators.
-
-### Caching
-The cache will use a JSON object due to the small size and simplicity of the data
-~~SQLite3 is the database being considered for caching, with JSON as an alternative.~~
-
-### Graph Types
-Planning to include bar charts and line graphs, possibly others based on the nature of the data.
-
-### Hosting
-Undecided between GitHub Pages and Heroku; dependent on back-end resource needs.
-
-### Technology Stack
-HTML, CSS, Python, Flask, SQLite3, JavaScript (D3), Pandas, datareader, and some Python API libraries.
-
-### Time Frame
-The project is estimated to be completed in 10-15 days.
-
+EconDashboard is a simple, single-page application designed to pull and visualize key economic indicators. The project is under active development and aims to become a useful tool for personal research and possibly more. I'm using GPT4 as a collaborative tool to help scope, plan, and troubleshoot various aspects of the project. 
 
 ## Project Timeline and Tasks
 
@@ -56,6 +28,33 @@ The project is estimated to be completed in 10-15 days.
 - [ ] **Day 16:** Secure your API key. Decide on hosting (Heroku or GitHub Pages) and deploy the project. 
 - [ ] **Day 17:** Write final documentation in README, including how to run the project locally and how to use the deployed application.
 
+## Project Information
+
+### Target Audience
+Primarily for personal use, though the project may evolve into a portfolio piece in the future.
+
+### Data Sources
+V1 will focus entirely on US economic data available on the FRED database: https://fred.stlouisfed.org/docs/api/fred/. Future versions will include more diverse data sources.
+
+### Dashboard Features
+The focus is on a simple dashboard showcasing various economic indicators such as GDP, CPI etc.
+
+### Caching
+The cache will use a JSON object due to the small size and simplicity of the data. 
+
+~~SQLite3 is the database being considered for caching, with JSON as an alternative.~~
+
+### Hosting
+Hosting will be on GitHub pages, and the backend requirements will be minimized to enable that.
+
+~~Undecided between GitHub Pages and Heroku; dependent on back-end resource needs.~~
+
+### Technology Stack
+HTML, CSS, Python, Flask, ~~SQLite3~~, JavaScript, Chart.js, ~~D3.js~~, ~~Pandas~~
+
+### Time Frame
+The project is estimated to be completed in 10-15 days.
+
 
 ## Recommendations by ChatGPT
 
@@ -68,31 +67,26 @@ Prioritize creating small prototypes for testing various aspects of the project 
 ### Iterative Development
 Start with an MVP (Minimum Viable Product) and evolve from there.
 
+### Iterate
+Build upon the MVP based on new learnings and potential user feedback.
+
 ### Hosting & Backend
 Given the tech stack of Python and Flask, Heroku could be a more fitting choice for hosting as it also supports SQLite.
 
 ### Resource Allocation
 Ensure ample time is allocated for each segment of the project, and be prepared to make adjustments based on initial findings.
 
-### General Tips
-
-#### Start Small
-Aim for a Minimum Viable Product (MVP) first to provide value quickly.
-
-#### Divide and Conquer
+### Divide and Conquer
 Break the project into smaller tasks and prioritize them.
 
-#### Identify Dependencies
+### Identify Dependencies
 Understand dependencies between tasks to avoid future roadblocks.
 
-#### Iterate
-Build upon the MVP based on new learnings and potential user feedback.
-
-#### Version Control
+### Version Control
 Use Git effectively to manage the project versions.
 
-#### Test
+### Test
 Allocate time for testing, especially integration tests between different components.
 
-#### Documentation
+### Documentation
 Keep comprehensive notes for long-term maintenance and scalability.

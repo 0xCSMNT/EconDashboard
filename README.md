@@ -2,6 +2,8 @@
 
 EconDashboard is a simple, single-page application designed to pull and visualize key economic indicators. The project is under active development and aims to become a useful tool for personal research and possibly more. I'm using GPT4 as a collaborative tool to help scope, plan, and troubleshoot various aspects of the project. 
 
+
+
 ## Project Timeline and Tasks
 
 #### Week 1: Initial Setup and Data Source Research
@@ -27,6 +29,8 @@ EconDashboard is a simple, single-page application designed to pull and visualiz
 #### Final Days: Deployment and Documentation
 - [ ] **Day 16:** Secure your API key. Decide on hosting (Heroku or GitHub Pages) and deploy the project. 
 - [ ] **Day 17:** Write final documentation in README, including how to run the project locally and how to use the deployed application.
+
+
 
 ## Project Information
 
@@ -58,7 +62,8 @@ HTML, CSS, Python, Flask, ~~SQLite3~~, JavaScript, Chart.js, ~~D3.js~~, ~~Pandas
 The project is estimated to be completed in 10-15 days.
 
 
-## Recommendations by ChatGPT
+
+## Recommendations by GPT4
 
 ### Finalize Data Sources
 Determine the APIs or data sources as early as possible to plan for rate limits and data structures.

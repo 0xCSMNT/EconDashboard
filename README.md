@@ -52,7 +52,7 @@ The project is estimated to be completed in 10-15 days.
 - [ ] **Day 15:** Make any necessary adjustments based on testing.
 
 #### Final Days: Deployment and Documentation
-- [ ] **Day 16:** Decide on hosting (Heroku or GitHub Pages) and deploy the project.
+- [ ] **Day 16:** Secure your API key. Decide on hosting (Heroku or GitHub Pages) and deploy the project. 
 - [ ] **Day 17:** Write final documentation in README, including how to run the project locally and how to use the deployed application.
 
 

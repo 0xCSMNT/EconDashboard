@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EconDashboard</title>
+    <!-- You can add your CSS files or inline styles here -->
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <header>
+        <h1>EconDashboard</h1>
+        <nav>
+            <!-- Add navigation links here -->
+        </nav>
+    </header>
+    
+    <main>
+        {% block content %}
+        <!-- This is where content from child templates will go -->
+        {% endblock %}
+    </main>
+    
+    <footer>
+        <p>Copyright 2023, EconDashboard</p>
+    </footer>
+
+    <!-- You can add your JS files or inline scripts here -->
+</body>
+<a href="/">Index</a>
+<br>
+<a href="/grid_test">Grid Test</a>
+<br>
+<a href="/gdp_test">GDP Test</a>
+</html>

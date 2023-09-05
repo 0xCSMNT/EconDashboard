@@ -1,2 +1,21 @@
-# .gitignore
+# Ignore virtual environment
+envEconDash/
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+
+# Flask file-uploads
+uploads/
+
+# Environment variables
 .env
+
+# User-specific files
+*.swp
+*.swo
+*.swn
+
+# OS-specific
+.DS_Store
+Thumbs.db
+

@@ -1,6 +1,9 @@
 # Ignore virtual environment
 envEconDash/
 
+# Ignore the node_modules directory
+node_modules/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 

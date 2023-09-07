@@ -17,17 +17,17 @@ EconDashboard is a simple, single-page application designed to pull and visualiz
 - [x] **Day 8:** Secure your API key. ~~store API data in SQLite database~~.
 
 #### Week 3: Front-end Development
-- [ ] **Day 9:** Design the front-end layout with HTML and CSS.
-- [ ] **Day 10-11:** Learn basic D3.js for data visualization.
-- [ ] **Day 12:** Implement D3.js charts and graphs based on the data in SQLite database.
+- [x] **Day 9:** Design the front-end layout with HTML and CSS.
+- [x] **Day 10-11:** Learn basic Chart.js ~~D3.js~~ for data visualization.
+- [ ] **Day 12:** Implement ~~D3.js~~ charts and graphs based on the data in JSON object ~~SQLite database~~.
 
 #### Week 4: Full-Stack Integration and Testing
-- [ ] **Day 13:** Integrate the Flask backend with the front-end.
-- [ ] **Day 14:** Test the complete application locally for bugs and performance issues.
-- [ ] **Day 15:** Make any necessary adjustments based on testing.
+- [ ] **Day 13:** Integrate the Flask backend with the front-end. Migrate api logic from ipynb to .py
+- [ ] **Day 14:** Get DB hosted
+- [ ] **Day 15:** Get frontend hosted
 
 #### Final Days: Deployment and Documentation
-- [ ] **Day 16:** Implement caching logic to update JSON every 12 hours using Github Actions. Deploy the project. ~~Decide on hosting (Heroku or GitHub Pages)~~. 
+- [ ] **Day 16:** Implement caching logic to update DB every 12 hours. ~~Decide on hosting (Heroku or GitHub Pages)~~. 
 - [ ] **Day 17:** Write final documentation in README, including how to run the project locally and how to use the deployed application.
 
 

@@ -56,6 +56,9 @@
     </main> 
     
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
 
@@ -66,18 +69,27 @@
   
     new Chart(ctx1, {
       type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+      data: {        
         datasets: [{
           label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
+          data: [
+            {x: '2016-12-25', y: 20}, 
+            {x: '2016-12-26', y: 10},
+            {x: '2016-12-27', y: 30},
+            {x: '2016-12-28', y: 50},
+            {x: '2016-12-29', y: 60},
+            {x: '2016-12-30', y: 20}
+          ],
           borderWidth: 1
         }]
       },
       options: {
         scales: {
-          y: {
-            beginAtZero: true
+          x: {
+            type: 'time',
+            time: {
+              unit: 'day'
+            }  
           }
         }
       }

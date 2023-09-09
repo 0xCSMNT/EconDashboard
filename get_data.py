@@ -35,41 +35,44 @@ def filter_observation(obs):
     }
 
 # ... [rest of the imports and setup]
+def fetch_data_and_write_to_file():
+    fred_data = {}
+    count = 0
 
-fred_data = {}
-count = 0
-
-for source in data_sources:
-    params = {
-        "api_key": api_key,
-        "file_type": "json",
-        "series_id": source['code'],
-        "observation_start": "1970-01-01",
-        "sort_order": "desc"
-    }
-    
-    try:
-        response = requests.get(base_url, params=params)
-        response.raise_for_status()
+    for source in data_sources:
+        params = {
+            "api_key": api_key,
+            "file_type": "json",
+            "series_id": source['code'],
+            "observation_start": "1970-01-01",
+            "sort_order": "desc"
+        }
         
-        print(f"Successfully fetched data for {source['name']} ({source['code']})")
-        data = response.json()
-        
-        # Filter out unwanted keys
-        filtered_observations = [filter_observation(obs) for obs in data['observations']]
+        try:
+            response = requests.get(base_url, params=params)
+            response.raise_for_status()
+            
+            print(f"Successfully fetched data for {source['name']} ({source['code']})")
+            data = response.json()
+            
+            # Filter out unwanted keys
+            filtered_observations = [filter_observation(obs) for obs in data['observations']]
 
-        fred_data[source['code']] = filtered_observations
-        count += len(filtered_observations)
-        
-        fred_data[source['code']] = filtered_observations
+            fred_data[source['code']] = filtered_observations
+            count += len(filtered_observations)
+            
+            fred_data[source['code']] = filtered_observations
 
-    except requests.exceptions.RequestException as e:
-        print(f"Failed to fetch data for {source['name']} ({source['code']})")
-        print(f"Exception: {e}")
+        except requests.exceptions.RequestException as e:
+            print(f"Failed to fetch data for {source['name']} ({source['code']})")
+            print(f"Exception: {e}")
 
-    time.sleep(0.25)  # To avoid hitting rate limit; adjust as needed
+        time.sleep(0.25)  # To avoid hitting rate limit; adjust as needed
 
-print(f"Total data points fetched: {count}")
+    print(f"Total data points fetched: {count}")
 
-with open("fred_data.json", "w") as f:
-    json.dump(fred_data, f, indent=4)
+    with open("fred_data.json", "w") as f:
+        json.dump(fred_data, f, indent=4)
+
+if __name__ == "__main__":
+    fetch_data_and_write_to_file()

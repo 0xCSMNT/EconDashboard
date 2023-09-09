@@ -18,7 +18,7 @@
 {% block scripts %}
 <script>
     const gdpData = {{ gdp|tojson|safe }};
-    makeChart('myChart1', gdpData, 'GDP Data');
+    makeChart('myChart1', gdpData, 'GDP', 'line', 'year');
 </script>
 {% endblock %}
 

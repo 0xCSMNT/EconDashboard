@@ -1,4 +1,4 @@
-function makeChart(canvasId, data, label = 'Data', type = 'line', options = null) {
+function makeChart(canvasId, data, label = 'Data', type, unit, options = null) {
     const ctx = document.getElementById(canvasId);
     
     const defaultOptions = {
@@ -6,7 +6,7 @@ function makeChart(canvasId, data, label = 'Data', type = 'line', options = null
             x: {
                 type: 'time',
                 time: {
-                    unit: 'quarter'
+                    unit: unit
                 }  
             }
         }

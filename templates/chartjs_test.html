@@ -16,16 +16,18 @@
         
         <div class="col-md-10">
             <div class="main-content">
-                <!-- Your charts, graphs, and other content go here -->
+                <!-- Heading Title -->
                 <h2 class="display-5 text-center">Federal Reserve Data Visualizer</h2>
-                <div class="row my-2">
+
+                <!-- Row 1 -->
+                <div class="row my-3">
                     <div class="col-6 ">
                         <div class="card">
                             <div class="card-body">
-                                <h5>My Chart0</h5>
+                                <h5 class="text-center">GDP</h5>
                                 <hr>
                                 <div>
-                                    <canvas id="myChart0"></canvas>
+                                    <canvas id="gdp"></canvas>
                                 </div>  
                             </div>
                         </div>
@@ -34,23 +36,25 @@
                     <div class="col-6 ">
                         <div class="card">
                             <div class="card-body">
-                                <h5>My Chart2</h5>
+                                <h5 class="text-center">Federal Total Debt</h5>
                                 <hr>
                                 <div>
-                                    <canvas id="myChart2"></canvas>
+                                    <canvas id="fedTotalDebt"></canvas>
                                 </div>  
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Row 2 -->
                 <div class="row my-2">
                     <div class="col-4 ">
                         <div class="card">
                             <div class="card-body">
-                                <h5>My Chart3</h5>
+                                <h5 class="text-center">Federal Debt to GDP</h5>
                                 <hr>
                                 <div>
-                                    <canvas id="myChart3"></canvas>
+                                    <canvas id="fedDebtGDP"></canvas>
                                 </div>  
                             </div>
                         </div>
@@ -59,10 +63,10 @@
                     <div class="col-4 ">
                         <div class="card">
                             <div class="card-body">
-                                <h5>My Chart4</h5>
+                                <h5 class="text-center">Household Debt to GDP</h5>
                                 <hr>
                                 <div>
-                                    <canvas id="myChart4"></canvas>
+                                    <canvas id="hhDebtGDP"></canvas>
                                 </div>  
                             </div>
                         </div>
@@ -71,10 +75,101 @@
                     <div class="col-4 ">
                         <div class="card">
                             <div class="card-body">
-                                <h5>My Chart5</h5>
+                                <h5 class="text-center">Unemployment</h5>
                                 <hr>
                                 <div>
-                                    <canvas id="myChart5"></canvas>
+                                    <canvas id="unemployment"></canvas>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 3 -->
+                <div class="row my-2">
+                    <div class="col-4 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-center">CPI</h5>
+                                <hr>
+                                <div>
+                                    <canvas id="cpi"></canvas>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-4 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-center">Industrial Production</h5>
+                                <hr>
+                                <div>
+                                    <canvas id="indPro"></canvas>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-4 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-center">Housing Starts</h5>
+                                <hr>
+                                <div>
+                                    <canvas id="houst"></canvas>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Row 4 -->
+                <div class="row my-2">
+                    <div class="col-3 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-center">M2 Money Supply</h5>
+                                <hr>
+                                <div>
+                                    <canvas id="m2"></canvas>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-3 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-center">Federal Funds Rate</h5>
+                                <hr>
+                                <div>
+                                    <canvas id="fedfunds"></canvas>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-center">S&P 500</h5>
+                                <hr>
+                                <div>
+                                    <canvas id="sp500"></canvas>
+                                </div>  
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="col-3 ">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="text-center">NASDAQ 100</h5>
+                                <hr>
+                                <div>
+                                    <canvas id="nasdaq"></canvas>
                                 </div>  
                             </div>
                         </div>
@@ -89,7 +184,52 @@
 
 {% block scripts %}
 <script>
-    const gdpData = {{ gdp|tojson|safe }};
-    makeChart('myChart0', gdpData, 'GDP Data');
+    // First Timeout: Immediate load (Charts 1 and 2)
+const gdpData = {{ gdp|tojson|safe }};
+makeChart('gdp', gdpData, 'data_label', 'line', 'year');
+
+const fedTotalDebt = {{ gfdebtn|tojson|safe }};
+makeChart('fedTotalDebt', fedTotalDebt, 'data_label', 'line', 'year');
+
+// Second Timeout: Delayed by 200ms (Charts 3-5)
+setTimeout(() => {
+    const fedDebtGDP = {{ gfdegdq188s|tojson|safe }};
+    makeChart('fedDebtGDP', fedDebtGDP, 'data_label', 'line', 'year');
+
+    const hhDebtGDP = {{ hdtgpdusq163n|tojson|safe }};
+    makeChart('hhDebtGDP', hhDebtGDP, 'data_label', 'line', 'year');
+
+    const unemployment = {{ unrate|tojson|safe }};
+    makeChart('unemployment', unemployment, 'data_label', 'line', 'month');
+}, 200);
+
+// Third Timeout: Delayed by 400ms (Charts 6-8)
+setTimeout(() => {
+    const cpi = {{ corestickm159sfrbatl|tojson|safe }};
+    makeChart('cpi', cpi, 'data_label', 'line', 'month');
+
+    const indPro = {{ indpro|tojson|safe }};
+    makeChart('indPro', indPro, 'data_label', 'line', 'month');
+
+    const houst = {{ houst|tojson|safe }};
+    makeChart('houst', houst, 'data_label', 'line', 'month');
+}, 400);
+
+// Fourth Timeout: Delayed by 600ms (Charts 9-12)
+setTimeout(() => {
+    const m2 = {{ wm2ns|tojson|safe }};
+    makeChart('m2', m2, 'data_label', 'line', 'week');
+
+    const fedfunds = {{ dff|tojson|safe }};
+    makeChart('fedfunds', fedfunds, 'data_label', 'line', 'day');
+
+    const sp500 = {{ sp500|tojson|safe }};
+    makeChart('sp500', sp500, 'data_label', 'line', 'day');
+
+    const nasdaq = {{ nasdaq100|tojson|safe }};
+    makeChart('nasdaq', nasdaq, 'data_label', 'line', 'day');
+}, 600);
+
 </script>
+
 {% endblock %}

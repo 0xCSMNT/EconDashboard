@@ -1,4 +1,4 @@
-function initChart(canvasId, data, label = 'Data', type = 'line', options = null) {
+function makeChart(canvasId, data, label = 'Data', type = 'line', options = null) {
     const ctx = document.getElementById(canvasId);
     
     const defaultOptions = {

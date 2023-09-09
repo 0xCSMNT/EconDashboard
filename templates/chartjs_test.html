@@ -22,10 +22,10 @@
                     <div class="col-6 ">
                         <div class="card">
                             <div class="card-body">
-                                <h5>My Chart1</h5>
+                                <h5>My Chart0</h5>
                                 <hr>
                                 <div>
-                                    <canvas id="myChart1"></canvas>
+                                    <canvas id="myChart0"></canvas>
                                 </div>  
                             </div>
                         </div>
@@ -85,4 +85,11 @@
     </div>
 </div>
       
+{% endblock %}
+
+{% block scripts %}
+<script>
+    const gdpData = {{ gdp|tojson|safe }};
+    makeChart('myChart0', gdpData, 'GDP Data');
+</script>
 {% endblock %}

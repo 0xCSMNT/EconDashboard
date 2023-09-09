@@ -27,7 +27,7 @@ data_sources = [
     {'name': 'NASDAQ 100', 'code': 'NASDAQ100', 'frequency': 'Daily'}
 ]
 
-# Define a function to filter out unwanted keys from the observations
+# Filter out unwanted keys from the observations
 def filter_observation(obs):
     return {
         'x': obs['date'],

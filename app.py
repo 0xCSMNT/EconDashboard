@@ -27,13 +27,14 @@ def gdp_test():
 
 @app.route('/grid_test')
 def grid_test():
-    gdp = get_gdp_data()
-    return render_template('grid_test.html', gdp=gdp)
+    
+    return render_template('grid_test.html' )
 
 
 @app.route('/chartjs_test')
 def chartjs_test():
-    return render_template('chartjs_test.html')
+    gdp = get_gdp_data()
+    return render_template('chartjs_test.html', gdp=gdp)
         
 
 if __name__ == '__main__':

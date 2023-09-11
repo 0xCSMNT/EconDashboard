@@ -9,7 +9,13 @@ function makeChart(canvasId, data, label="placeholder", type, unit, startDate=nu
                     unit: unit
                 }  
             }
-        }        
+        },
+        plugins: {
+            legend: {
+                display: false
+            } 
+        }
+               
     };
     // If startDate is provided, filter the data from that date onwards
     if (startDate) {

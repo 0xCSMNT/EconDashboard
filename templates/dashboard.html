@@ -1,0 +1,291 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar -->
+        <div class="col-md-2 p-3 bg-light border-right">
+            <div class="sidebar">
+                <!-- Sidebar Links with Custom Style -->
+                <h3 class="p-3 mb-n3">Data Sources</h3>
+                
+                <div class="d-flex flex-column align-items-start p-3">
+                    <a href="https://fred.stlouisfed.org/series/GDP" target="_blank" class="mb-2 custom-link">GDP</a>
+                    <a href="https://fred.stlouisfed.org/series/GFDEBTN" target="_blank" class="mb-2 custom-link">Federal Total Debt</a>
+                    <a href="https://fred.stlouisfed.org/series/GFDEGDQ188S" target="_blank" class="mb-2 custom-link">Federal Debt to GDP</a>
+                    <a href="https://fred.stlouisfed.org/series/HDTGPDUSQ163N" target="_blank" class="mb-2 custom-link">Household Debt to GDP</a>
+                    <a href="https://fred.stlouisfed.org/series/UNRATE" target="_blank" class="mb-2 custom-link">Unemployment</a>
+                    <a href="https://fred.stlouisfed.org/series/CORESTICKM159SFRBATL" target="_blank" class="mb-2 custom-link">CPI</a>
+                    <a href="https://fred.stlouisfed.org/series/INDPRO" target="_blank" class="mb-2 custom-link">Industrial Production</a>
+                    <a href="https://fred.stlouisfed.org/series/HOUST" target="_blank" class="mb-2  custom-link">Housing Starts</a>
+                    <a href="https://fred.stlouisfed.org/series/M2SL" target="_blank" class="mb-2 custom-link">Money Supply (M2)</a>
+                    <a href="https://fred.stlouisfed.org/series/DFF" target="_blank" class="mb-2 custom-link">Fed Funds Rate</a>
+                    <a href="https://fred.stlouisfed.org/series/SP500" target="_blank" class="mb-2 custom-link">SP500</a>
+                    <a href="https://fred.stlouisfed.org/series/NASDAQ100"target="_blank" class="mb-2 custom-link">NASDAQ 100</a>
+                    
+                    <hr style="border-top: 2px solid black; width: 100%;">
+
+                    
+                    
+                </div>
+                <!--GitHub Link-->
+                <a href="https://github.com/CormacDaly/EconDashboard" target="_blank" class="mt-0 mb-3 custom-link text-center" style="display: block; text-align: center;">GitHub Repo</a>
+
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        
+        <div class="col-md-10">
+            <div class="main-content">
+                <!-- Heading Title -->
+                <h2 class="display-5 text-center my-3">Federal Reserve Economic Data Visualizer</h2>
+
+    <!-- Row 1 -->            
+<div class="row my-3">
+
+    <!-- GDP -->
+    <div class="col-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-center">GDP Quarterly Growth</h5>
+                <hr>
+                <div>
+                    <canvas id="gdp"></canvas>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <!-- 4 data point cards in a 2x2 grid -->
+    <div class="col-6">
+        <div class="row ">
+
+            <!-- Federal Government Debt -->
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">Federal Debt (Millions)</h5>
+                        <div class="text-center">                                        
+                            <h3 class="display-6 py-2">${{ '{:,.0f}'.format(gfdebtn[0]['y']) }}</h3>
+                            <div>
+                                <p>Updated:  {{ gfdebtn[0]['x'] }}</p>
+                            </div>                                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Federal Debt to GDP -->
+            <div class="col-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">Federal Debt to GDP</h5>
+                        <div class="text-center">                                        
+                            <h3 class="display-6 py-2">{{ '{:,.2f}'.format(gfdegdq188s[0]['y']) }}%</h3>
+                            <div>
+                                <p>Updated:  {{ gfdegdq188s[0]['x'] }}</p>                                
+                            </div>                                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Household Debt -->
+            <div class="col-6 py-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">Household Debt to GDP</h5>
+                        <div class="text-center">                                        
+                            <h3 class="display-6 py-2">{{ '{:,.2f}'.format(hdtgpdusq163n[0]['y']) }}%</h3>
+                            <div>
+                                <p>Updated:  {{ hdtgpdusq163n[0]['x'] }}</p>
+                            </div>                                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Federal Funds Rate -->
+            <div class="col-6 py-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="text-center">Federal Funds Rate</h5>
+                        <div class="text-center">                                        
+                            <h3 class="display-6 py-2">{{ '{:,.2f}'.format(dff[0]['y']) }}%</h3>
+                            <div>
+                                <p>Updated:  {{ dff[0]['x'] }}</p>                    
+                            </div>                                        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Row 2 -->
+<div class="row">
+
+    <!-- CPI -->
+    <div class="col-4 ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-center">CPI</h5>
+                <hr>
+                <div>
+                    <canvas id="cpi"></canvas>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <!-- M2 -->
+    <div class="col-4 ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-center">Money Supply (M2)</h5>
+                <hr>
+                <div>
+                    <canvas id="m2_change"></canvas>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <!-- Unemployment -->
+    <div class="col-4 ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-center">Unemployment</h5>
+                <hr>
+                <div>
+                    <canvas id="unemployment"></canvas>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Row 3-->
+<div class="row my-3">
+
+    <!-- SP500 -->
+    <div class="col-6 ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-center">SP500</h5>
+                <hr>
+                <div>
+                    <canvas id="sp500"></canvas>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <!-- NASDAQ 100 -->
+    <div class="col-6 ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-center">NASDAQ 100</h5>
+                <hr>
+                <div>
+                    <canvas id="nasdaq"></canvas>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- NASDAQ 100 -->
+    
+
+<!--Row 4 -->
+<div class="row">
+
+    <!--Industrial Production-->
+    <div class="col-6 ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-center">Industrial Production</h5>
+                <hr>
+                <div>
+                    <canvas id="indPro"></canvas>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+    <!--Housing Starts-->
+    <div class="col-6 ">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="text-center">Housing Starts</h5>
+                <hr>
+                <div>
+                    <canvas id="houst"></canvas>
+                </div>  
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+
+
+      
+{% endblock %}
+
+{% block scripts %}
+<script>
+    // First Timeout: Immediate load (Charts 1 and 2)
+const gdpData = {{ gdp_change|tojson|safe }};
+makeChart('gdp', gdpData, 'data_label', 'bar', 'quarter', '2020-01-01');
+
+
+// Second Timeout: Delayed by 200ms (Charts 3-5)
+setTimeout(() => {
+    const cpi = {{ corestickm159sfrbatl|tojson|safe }};
+    makeChart('cpi', cpi, 'data_label', 'bar', 'month', '2020-01-01');
+
+    const m2Data = {{ m2_change|tojson|safe }};
+    makeChart('m2_change', m2Data, 'data_label', 'bar', 'month', '2020-01-01');
+
+    const unemployment = {{ unrate|tojson|safe }};
+    makeChart('unemployment', unemployment, 'data_label', 'bar', 'month', '2020-01-01');
+}, 200);
+
+
+// Third Timeout: Delayed by 400ms (Charts 6-8)
+setTimeout(() => {
+    
+    const sp500 = {{ sp500|tojson|safe }};
+    makeChart('sp500', sp500, 'data_label', 'line', 'day', '2023-01-01');
+
+
+    const nasdaq = {{ nasdaq100|tojson|safe }};
+    makeChart('nasdaq', nasdaq, 'data_label', 'line', 'day', '2023-01-01');
+    
+    
+}, 400);
+
+// Fourth Timeout: Delayed by 600ms (Charts 9-12)
+setTimeout(() => {
+    
+    const indPro = {{ indpro|tojson|safe }};
+    makeChart('indPro', indPro, 'data_label', 'bar', 'month', '2020-01-01');
+
+    const houst = {{ houst|tojson|safe }};
+    makeChart('houst', houst, 'data_label', 'bar', 'month', '2020-01-01');
+    
+}, 600);
+
+</script>
+
+{% endblock %}

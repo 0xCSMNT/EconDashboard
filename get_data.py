@@ -21,7 +21,7 @@ data_sources = [
     {'name': 'CPI', 'code': 'CORESTICKM159SFRBATL', 'frequency': 'Monthly'},
     {'name': 'Industrial Production', 'code': 'INDPRO', 'frequency': 'Monthly'},
     {'name': 'Housing Starts', 'code': 'HOUST', 'frequency': 'Monthly'},
-    {'name': 'Money Supply (M2)', 'code': 'WM2NS', 'frequency': 'Weekly'},
+    {'name': 'Money Supply (M2)', 'code': 'M2SL', 'frequency': 'Monthly'},
     {'name': 'Fed Funds Rate', 'code': 'DFF', 'frequency': 'Daily'},
     {'name': 'SP500', 'code': 'SP500', 'frequency': 'Daily'},
     {'name': 'NASDAQ 100', 'code': 'NASDAQ100', 'frequency': 'Daily'}

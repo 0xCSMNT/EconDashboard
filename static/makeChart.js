@@ -1,4 +1,4 @@
-function makeChart(canvasId, data, label = 'Data', type, unit, options = null) {
+function makeChart(canvasId, data, label="placeholder", type, unit, startDate=null, options = null) {
     const ctx = document.getElementById(canvasId);
     
     const defaultOptions = {
@@ -9,15 +9,20 @@ function makeChart(canvasId, data, label = 'Data', type, unit, options = null) {
                     unit: unit
                 }  
             }
-        }
+        }        
     };
+    // If startDate is provided, filter the data from that date onwards
+    if (startDate) {
+        data = data.filter(item => new Date(item.x) >= new Date(startDate));
+    }
+
     
     new Chart(ctx, {
         type: type,
         data: {        
-            datasets: [{
+            datasets: [{                
                 label: label,
-                data: data,
+                data: data,                
                 borderWidth: 1
             }]
         },

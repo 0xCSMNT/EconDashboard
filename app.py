@@ -55,25 +55,6 @@ def index():
     return render_template('index.html',name=name)
 
 
-@app.route('/gdp_test')
-def gdp_test():
-    gdp = get_series("GDP")
-    return render_template('gdp_test.html', gdp=gdp, )
-
-
-@app.route('/grid_test')
-def grid_test():    
-    return render_template('grid_test.html' )
-
-
-@app.route('/chartjs_test')
-def chartjs_test():
-    data = {}
-    for source in data_sources:
-        data[source['code'].lower()] = get_series(source['code'])
-    return render_template('chartjs_test.html', **data)
-
-
 @app.route('/dashboard')
 def dashboard():
     gdp_change = get_series_pc_change('GDP')
@@ -86,4 +67,5 @@ def dashboard():
         
 
 if __name__ == '__main__':    
-    app.run(host='0.0.0.0', debug=False)
+    # app.run(host='0.0.0.0', debug=False) # production
+    app.run(host='127.0.0.1', debug=True) # debugging

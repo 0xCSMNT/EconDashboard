@@ -9,13 +9,21 @@ import time
 load_dotenv()
 
 MONGO_URI = os.environ.get('MONGO_URI')
-client = MongoClient(MONGO_URI)
-db = client['econ-dash-db']
-print(client.list_database_names())
+client = None
+db = None
 
 app = Flask(__name__)
 
-def get_series(series_code):    
+def get_db():
+    global client, db
+    if client is None:
+        MONGO_URI = os.environ.get('MONGO_URI')
+        client = MongoClient(MONGO_URI)
+        db = client['econ-dash-db']
+    return db
+
+def get_series(series_code):
+    db= get_db()    
     fred_data = db.fred.find_one({})
     series = fred_data.get(series_code)        
     for item in series:
@@ -28,6 +36,7 @@ def get_series(series_code):
 
 
 def get_series_pc_change(series_code):
+    db=get_db()
     fred_data = db.fred.find_one({})    
     data = fred_data.get(series_code)
 
@@ -76,7 +85,5 @@ def dashboard():
     return render_template('dashboard.html', gdp_change=gdp_change, m2_change=m2_change, **data)   
         
 
-if __name__ == '__main__':
-    template_files = [os.path.join('templates', f) for f in os.listdir('templates') if f.endswith('.html')]
-    app.run(debug=True, extra_files=template_files)
-
+if __name__ == '__main__':    
+    app.run(host='0.0.0.0', debug=False)

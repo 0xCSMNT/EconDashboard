@@ -1,5 +1,6 @@
 # Ignore virtual environment
 envEconDash/
+app-env/
 
 # Ignore the node_modules directory
 node_modules/

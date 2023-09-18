@@ -24,8 +24,10 @@ def get_db():
 
 def get_series(series_code):
     db= get_db()    
-    fred_data = db.fred.find_one({})
-    series = fred_data.get(series_code)        
+    
+    series_data = db.fred.find_one({'_id': series_code})  # Query using series_code as _id
+    series = series_data.get('data', [])
+           
     for item in series:
         try:
             item['y'] = float(item['y'])
@@ -37,8 +39,10 @@ def get_series(series_code):
 
 def get_series_pc_change(series_code):
     db=get_db()
-    fred_data = db.fred.find_one({})    
-    data = fred_data.get(series_code)
+    
+    # Change back to fred when you go to deploy
+    series_data = db.fred.find_one({'_id': series_code})  # Query using series_code as _id
+    data = series_data.get('data', [])
 
     new_data = []
     for i in range(len(data) - 1):
@@ -67,5 +71,5 @@ def dashboard():
         
 
 if __name__ == '__main__':    
-    app.run(host='0.0.0.0', debug=False) # production
-    # app.run(host='127.0.0.1', debug=True) # debugging
+    # app.run(host='0.0.0.0', debug=False) # production
+    app.run(host='127.0.0.1', debug=True) # debugging

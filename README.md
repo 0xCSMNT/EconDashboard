@@ -24,7 +24,7 @@ EconDashboard is a simple, single-page application designed to pull and visualiz
 #### Week 4: Full-Stack Integration and Testing
 - [x] **Day 13:** Integrate the Flask backend with the front-end. Migrate api logic from ipynb to .py
 - [ ] **Day 14:** Style the front end
-- [ ] **Day 15:** Get database & frontend hosted on Railway
+- [x] **Day 15:** Get database & frontend hosted on Railway
 
 #### Final Days: Deployment and Documentation
 - [ ] **Day 16:** Implement caching logic to update DB every 12 hours. ~~Decide on hosting (Heroku or GitHub Pages)~~. 

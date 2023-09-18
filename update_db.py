@@ -1,7 +1,8 @@
 import os
 from dotenv import load_dotenv
-import requests
 import json
+from pymongo import MongoClient
+import requests
 import time
 
 # Load environment variables from .env file
@@ -10,6 +11,11 @@ load_dotenv()
 # API key and base URL
 api_key = os.getenv("FRED_API_KEY")
 base_url = "https://api.stlouisfed.org/fred/series/observations"
+
+# MongoDB configuration
+MONGO_URI = os.getenv("MONGO_URI")  # Ensure you've set this in your .env file or as an environment variable
+client = MongoClient(MONGO_URI)
+db = client['econ-dash-db']
 
 # Define the list of data sources
 data_sources = [
@@ -34,9 +40,11 @@ def filter_observation(obs):
         'y': obs['value']
     }
 
+def update_db_with_series(series_code, data):
+    db.fred.update_one({'_id': series_code}, {'$set': {'data': data}}, upsert=True)
 
 # ... [rest of the imports and setup]
-def fetch_data_and_write_to_file():
+def fetch_data_and_update_db():
     fred_data = {}
     count = 0
 
@@ -62,7 +70,8 @@ def fetch_data_and_write_to_file():
             fred_data[source['code']] = filtered_observations
             count += len(filtered_observations)
             
-            fred_data[source['code']] = filtered_observations
+            # Update the database with fetched data
+            update_db_with_series(source['code'], filtered_observations)
 
         except requests.exceptions.RequestException as e:
             print(f"Failed to fetch data for {source['name']} ({source['code']})")
@@ -72,8 +81,7 @@ def fetch_data_and_write_to_file():
 
     print(f"Total data points fetched: {count}")
 
-    with open("fred_data.json", "w") as f:
-        json.dump(fred_data, f, indent=4)
-
+# Modify the name of the main function for clarity
 if __name__ == "__main__":
-    fetch_data_and_write_to_file()
+    fetch_data_and_update_db()
+

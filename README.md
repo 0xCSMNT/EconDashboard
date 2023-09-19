@@ -1,8 +1,22 @@
 # EconDashboard
 
-EconDashboard is a simple, single-page application designed to pull and visualize key economic indicators. The project is under active development and aims to become a useful tool for personal research and possibly more. I'm using GPT4 as a collaborative tool to help scope, plan, and troubleshoot various aspects of the project. 
+# Links
+#### [WebSite](https://econ-dash-production.up.railway.app/)
+#### [YouTube Demo](https://youtu.be/XXtdK6Ncq4w)
 
+# About
+EconDash is a simple vizualization tool using economic data taken from the Federal Reserve Economic Database (FRED). It's a culmination of the skills and knowledge I've acquired throughout the CS50x course. Data is sourced from the FRED API, and stored in a cloud-based MongoDB database to reduce calls to the FRED and provide snappier response to the user. A GitHub Action runs every 12 hours to refresh the data in the database.
 
+I chose this project because I am interested in financial & economic data, and I wanted to gain experience working with APIs, noSQL databases, hosting, caching and automating data actions from a cloud server.
+
+Future versions should include more data sources and customizable charts.
+
+# Technologies Used:
+- Flask - Backend
+- MongoDB - Database
+- Bootstrap - Frontend Layout & Styling
+- Chart.js - Data Vizualization
+- Railway.app - Hosting
 
 ## Project Timeline and Tasks
 
@@ -23,77 +37,16 @@ EconDashboard is a simple, single-page application designed to pull and visualiz
 
 #### Week 4: Full-Stack Integration and Testing
 - [x] **Day 13:** Integrate the Flask backend with the front-end. Migrate api logic from ipynb to .py
-- [ ] **Day 14:** Style the front end
+- [x] **Day 14:** Style the front end
 - [x] **Day 15:** Get database & frontend hosted on Railway
 
 #### Final Days: Deployment and Documentation
-- [ ] **Day 16:** Implement caching logic to update DB every 12 hours. ~~Decide on hosting (Heroku or GitHub Pages)~~. 
-- [ ] **Day 17:** Write final documentation in README, including how to run the project locally and how to use the deployed application.
+- [x] **Day 16:** Implement caching logic to update DB every 12 hours. ~~Decide on hosting (Heroku or GitHub Pages)~~. 
+- [x] **Day 17:** Write final documentation in README, including how to run the project locally and how to use the deployed application.
 
 
 
-## Project Information
-
-### Target Audience
-Primarily for personal use, though the project may evolve into a portfolio piece in the future.
-
-### Data Sources
-V1 will focus entirely on US economic data available on the FRED database: https://fred.stlouisfed.org/docs/api/fred/. 
-
-Future versions will include more diverse data sources.
-
-### Dashboard Features
-The focus is on a simple dashboard showcasing various economic indicators such as GDP, CPI etc.
-
-### Caching
-The cache will use a JSON object due to the small size and simplicity of the data. 
-
-~~SQLite3 is the database being considered for caching, with JSON as an alternative.~~
-
-### Hosting
-Hosting will be on GitHub pages, and the backend requirements will be minimized to enable that.
-
-~~Undecided between GitHub Pages and Heroku; dependent on back-end resource needs.~~
-
-### Technology Stack
-HTML, CSS, Python, Flask, ~~SQLite3~~, JavaScript, Chart.js, ~~D3.js~~, ~~Pandas~~
-
-### Time Frame
-The project is estimated to be completed in 10-15 days.
 
 
 
-## Recommendations by GPT4
 
-### Finalize Data Sources
-Determine the APIs or data sources as early as possible to plan for rate limits and data structures.
-
-### Prototyping
-Prioritize creating small prototypes for testing various aspects of the project like data retrieval and visualization.
-
-### Iterative Development
-Start with an MVP (Minimum Viable Product) and evolve from there.
-
-### Iterate
-Build upon the MVP based on new learnings and potential user feedback.
-
-### Hosting & Backend
-Given the tech stack of Python and Flask, Heroku could be a more fitting choice for hosting as it also supports SQLite.
-
-### Resource Allocation
-Ensure ample time is allocated for each segment of the project, and be prepared to make adjustments based on initial findings.
-
-### Divide and Conquer
-Break the project into smaller tasks and prioritize them.
-
-### Identify Dependencies
-Understand dependencies between tasks to avoid future roadblocks.
-
-### Version Control
-Use Git effectively to manage the project versions.
-
-### Test
-Allocate time for testing, especially integration tests between different components.
-
-### Documentation
-Keep comprehensive notes for long-term maintenance and scalability.

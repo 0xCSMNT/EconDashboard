@@ -1,8 +1,8 @@
 # EconDashboard
 
 ## Links
-#### [WebSite](https://econ-dash-production.up.railway.app/)
-#### [YouTube Demo](https://youtu.be/XXtdK6Ncq4w)
+#### [WebSite](https://econ-dash-production.up.railway.app/) - The website is live. Please check it out!
+#### [YouTube Demo](https://youtu.be/XXtdK6Ncq4w) - Link to a 3 minute video as part of my submission.
 
 ## About
 EconDash is a simple vizualization tool using economic data taken from the Federal Reserve Economic Database (FRED). It's a culmination of the skills and knowledge I've acquired throughout the CS50x course. Data is sourced from the FRED API, and stored in a cloud-based MongoDB database to reduce calls to the FRED and provide snappier response to the user. A GitHub Action runs every 12 hours to refresh the data in the database.

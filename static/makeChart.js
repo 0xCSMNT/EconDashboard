@@ -1,13 +1,19 @@
-function makeChart(canvasId, data, label="placeholder", type, unit, startDate=null, options = null) {
+function makeChart(canvasId, data, label="placeholder", type, unit, startDate=null, yMin=null, yMax=null, options = null, scaleType = 'linear') {
     const ctx = document.getElementById(canvasId);
     
     const defaultOptions = {
         scales: {
+            // responsive: true,
+            // maintainAspectRatio: false,
             x: {
                 type: 'time',
                 time: {
                     unit: unit
                 }  
+            },
+            y: {
+                min: yMin,
+                max: yMax
             }
         },
         plugins: {
@@ -29,7 +35,8 @@ function makeChart(canvasId, data, label="placeholder", type, unit, startDate=nu
             datasets: [{                
                 label: label,
                 data: data,                
-                borderWidth: 1
+                borderWidth: 3,
+                pointRadius: 0
             }]
         },
         options: options || defaultOptions

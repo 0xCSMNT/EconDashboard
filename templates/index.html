@@ -1,8 +1,55 @@
 {% extends "layout.html" %}
 
 {% block content %}
-    <h2>Welcome, {{ name }}!</h2>    
+
+<div class="container mt-5 bg-light">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h1 class="display-4 text-center">EconDash</h1>
+            <p class="lead text-center">My Final Assignment for <a href="https://cs50.harvard.edu/x/2023/" target="_blank">CS50x</a></p>
+            
+            <hr class="my-4">
+            
+            <div class="about-project">
+                <h3>About the Project</h3>
+                <p>
+                    EconDash is a simple vizualization tool using economic data taken from the Federal Reserve Economic Database (FRED). It's a culmination of the skills and knowledge I've acquired throughout the CS50x course.       
+
+                    Data is sourced from the FRED API, and stored in a cloud-based MongoDB database to reduce calls to the FRED and provide snappier response to the user. A GitHub Action runs every 12 hours to refresh the data in the database.
+                    <br><br>
+
+                    I chose this project because I am interested in financial & economic data, and I wanted to gain experience working with APIs, noSQL databases, hosting, caching and automating data actions from a cloud server.
+                    <br><br>
+
+                    Future versions should include more data sources and customizable charts.
+                </p>
+                <h4>Technologies Used:</h4>
+                <ul>
+                    <li>Flask - Backend</li>
+                    <li>MongoDB - Database</li>
+                    <li>Bootstrap - Frontend Layout & Styling</li>
+                    <li>Chart.js - Data Vizualization.</li>
+                    <li>Railway.app - Hosting</li>
+                </ul> 
+                <hr style="border-top: 1px solid black; width: 100%; ">
+
+                    
+                    
+                </div>
+                <!--GitHub Link-->
+                <a href="https://github.com/CormacDaly/EconDashboard" target="_blank" class="btn btn-light">
+                    <i class="fab fa-github"></i> View on GitHub
+                  </a>
+
+            </div>               
+                  
+            </div>
+        </div>
+    </div>
+</div>
+
 {% endblock %}
+
 
 
 

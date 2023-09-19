@@ -6,12 +6,12 @@
     <div class="row">
 
         <!-- Sidebar -->
-        <div class="col-md-2 p-3 bg-light border-right">
+        <div class="col-md-2 p-3 bg-light border-right order-md-1 order-2">
             <div class="sidebar">
                 <!-- Sidebar Links with Custom Style -->
                 <h3 class="p-0 mb-n3">Data Sources</h3>
                 
-                <div class="d-flex flex-column align-items-start py-3">
+                <div class="d-flex flex-column align-items-start py-0">
                     <a href="https://fred.stlouisfed.org/series/GDP" target="_blank" class="mb-2 custom-link">GDP</a>
                     <a href="https://fred.stlouisfed.org/series/GFDEBTN" target="_blank" class="mb-2 custom-link">Federal Total Debt</a>
                     <a href="https://fred.stlouisfed.org/series/GFDEGDQ188S" target="_blank" class="mb-2 custom-link">Federal Debt to GDP</a>
@@ -31,14 +31,16 @@
                     
                 </div>
                 <!--GitHub Link-->
-                <a href="https://github.com/CormacDaly/EconDashboard" target="_blank" class="mt-0 mb-3 custom-link" style="display: block">GitHub Repo</a>
+                <a href="https://github.com/CormacDaly/EconDashboard" target="_blank" class="btn btn-light">
+                    <i class="fab fa-github"></i> View on GitHub
+                  </a>
 
             </div>
         </div>
 
 <!-- Main Content -->
 
-<div class="col-md-10">
+<div class="col-md-10 order-md-2 order-1">
     <div class="main-content">
         <!-- Heading Title -->
         <h2 class="display-5 text-center my-3">Federal Reserve Economic Data Visualizer</h2>
@@ -47,7 +49,7 @@
 <div class="row my-3">
 
     <!-- GDP -->
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="text-center">GDP Quarterly Growth</h5>
@@ -60,16 +62,16 @@
     </div>
 
     <!-- 4 data point cards in a 2x2 grid -->
-    <div class="col-6">
+    <div class="col-12 col-md-6">
         <div class="row ">
 
             <!-- Federal Government Debt -->
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-center">Federal Debt (Millions)</h5>
+                        <h5 class="text-center fs-6 fs-md-2 fs-lg-2 responsive-text">Federal Debt (Millions)</h5>
                         <div class="text-center">                                        
-                            <h3 class="display-6 py-2">${{ '{:,.0f}'.format(gfdebtn[0]['y']) }}</h3>
+                            <h3 class="display-6 py-2 fs-4 fs-md-5 fs-lg-6 responsive-text">${{ '{:,.0f}'.format(gfdebtn[0]['y']) }}</h3>
                             <div>
                                 <p>Updated:  {{ gfdebtn[0]['x'] }}</p>
                             </div>                                        
@@ -82,9 +84,9 @@
             <div class="col-6">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-center">Federal Debt to GDP</h5>
+                        <h5 class="text-center fs-6 fs-md-4 fs-lg-5 responsive-text">Federal Debt to GDP</h5>
                         <div class="text-center">                                        
-                            <h3 class="display-6 py-2">{{ '{:,.2f}'.format(gfdegdq188s[0]['y']) }}%</h3>
+                            <h3 class="display-6 py-2 fs-4 fs-md-5 fs-lg-6 responsive-text">{{ '{:,.2f}'.format(gfdegdq188s[0]['y']) }}%</h3>
                             <div>
                                 <p>Updated:  {{ gfdegdq188s[0]['x'] }}</p>                                
                             </div>                                        
@@ -97,9 +99,9 @@
             <div class="col-6 py-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-center">Household Debt to GDP</h5>
+                        <h5 class="text-center fs-6 fs-md-4 fs-lg-5 responsive-text">Household Debt to GDP</h5>
                         <div class="text-center">                                        
-                            <h3 class="display-6 py-2">{{ '{:,.2f}'.format(hdtgpdusq163n[0]['y']) }}%</h3>
+                            <h3 class="display-6 py-2 fs-4 fs-md-5 fs-lg-6 responsive-text">{{ '{:,.2f}'.format(hdtgpdusq163n[0]['y']) }}%</h3>
                             <div>
                                 <p>Updated:  {{ hdtgpdusq163n[0]['x'] }}</p>
                             </div>                                        
@@ -112,9 +114,9 @@
             <div class="col-6 py-3">
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="text-center">Federal Funds Rate</h5>
+                        <h5 class="text-center fs-6 fs-md-4 fs-lg-5 responsive-text">Federal Funds Rate</h5>
                         <div class="text-center">                                        
-                            <h3 class="display-6 py-2">{{ '{:,.2f}'.format(dff[0]['y']) }}%</h3>
+                            <h3 class="display-6 py-2 fs-4 fs-md-5 fs-lg-6 responsive-text">{{ '{:,.2f}'.format(dff[0]['y']) }}%</h3>
                             <div>
                                 <p>Updated:  {{ dff[0]['x'] }}</p>                    
                             </div>                                        
@@ -132,10 +134,10 @@
 <div class="row">
 
     <!-- CPI -->
-    <div class="col-4 ">
+    <div class="col-12 col-md-4">
         <div class="card">
             <div class="card-body">
-                <h6 class="text-center">CPI</h6>
+                <h6 class="text-center">Consumer Price Index</h6>
                 <hr>
                 <div>
                     <canvas id="cpi"></canvas>
@@ -145,10 +147,10 @@
     </div>
 
     <!-- M2 -->
-    <div class="col-4 ">
+    <div class="col-12 col-md-4">
         <div class="card">
             <div class="card-body">
-                <h6 class="text-center">Money Supply (M2)</h6>
+                <h6 class="text-center">Money Supply % Change (M2)</h6>
                 <hr>
                 <div>
                     <canvas id="m2_change"></canvas>
@@ -158,7 +160,7 @@
     </div>
 
     <!-- Unemployment -->
-    <div class="col-4 ">
+    <div class="col-12 col-md-4">
         <div class="card">
             <div class="card-body">
                 <h6 class="text-center">Unemployment</h6>
@@ -176,7 +178,7 @@
 <div class="row my-3">
 
     <!-- SP500 -->
-    <div class="col-6 ">
+    <div class="col-12 col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="text-center">SP500</h5>
@@ -189,7 +191,7 @@
     </div>
 
     <!-- NASDAQ 100 -->
-    <div class="col-6 ">
+    <div class="col-12 col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="text-center">NASDAQ 100</h5>
@@ -209,7 +211,7 @@
 <div class="row">
 
     <!--Industrial Production-->
-    <div class="col-6 ">
+    <div class="col-12 col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="text-center">Industrial Production</h5>
@@ -222,7 +224,7 @@
     </div>
 
     <!--Housing Starts-->
-    <div class="col-6 ">
+    <div class="col-12 col-md-6">
         <div class="card">
             <div class="card-body">
                 <h5 class="text-center">Housing Starts</h5>
@@ -233,11 +235,16 @@
             </div>
         </div>
     </div>
-
-
 </div>
 
-
+  <!-- Footer -->
+  <footer class="bg-light text-center text-lg-start">
+    <div class="container p-4">
+      <div class="text-center">
+        <p class="mb-0">© 2023 0xCSMNT. MIT No Attribution License (MIT-0)</p>
+      </div>
+    </div>
+  </footer>
 
       
 {% endblock %}
@@ -246,19 +253,19 @@
 <script>
     // First Timeout: Immediate load (Charts 1 and 2)
 const gdpData = {{ gdp_change|tojson|safe }};
-makeChart('gdp', gdpData, 'data_label', 'bar', 'quarter', '2020-01-01');
+makeChart('gdp', gdpData, 'GDP % Change', 'bar', 'quarter', '2020-01-01');
 
 
 // Second Timeout: Delayed by 200ms (Charts 3-5)
 setTimeout(() => {
     const cpi = {{ corestickm159sfrbatl|tojson|safe }};
-    makeChart('cpi', cpi, 'data_label', 'bar', 'month', '2020-01-01');
+    makeChart('cpi', cpi, 'CPI', 'bar', 'month', '2020-01-01');
 
     const m2Data = {{ m2_change|tojson|safe }};
-    makeChart('m2_change', m2Data, 'data_label', 'bar', 'month', '2020-01-01');
+    makeChart('m2_change', m2Data, 'M2 % Change', 'bar', 'month', '2020-01-01');
 
     const unemployment = {{ unrate|tojson|safe }};
-    makeChart('unemployment', unemployment, 'data_label', 'bar', 'month', '2020-01-01');
+    makeChart('unemployment', unemployment, 'Unemployment', 'bar', 'month', '2020-01-01');
 }, 200);
 
 
@@ -266,11 +273,11 @@ setTimeout(() => {
 setTimeout(() => {
     
     const sp500 = {{ sp500|tojson|safe }};
-    makeChart('sp500', sp500, 'data_label', 'line', 'day', '2023-01-01');
+    makeChart('sp500', sp500, 'SP500', 'line', 'day', '2023-01-01');
 
 
     const nasdaq = {{ nasdaq100|tojson|safe }};
-    makeChart('nasdaq', nasdaq, 'data_label', 'line', 'day', '2023-01-01');
+    makeChart('nasdaq', nasdaq, 'NADSAQ', 'line', 'day', '2023-01-01');
     
     
 }, 400);
@@ -279,10 +286,10 @@ setTimeout(() => {
 setTimeout(() => {
     
     const indPro = {{ indpro|tojson|safe }};
-    makeChart('indPro', indPro, 'data_label', 'bar', 'month', '2020-01-01');
+    makeChart('indPro', indPro, 'INDPRO', 'bar', 'month', '2020-01-01', 80, 105);
 
     const houst = {{ houst|tojson|safe }};
-    makeChart('houst', houst, 'data_label', 'bar', 'month', '2020-01-01');
+    makeChart('houst', houst, 'HOUST', 'bar', 'month', '2020-01-01', 800, 1800);
     
 }, 600);
 
